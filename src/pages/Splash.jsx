@@ -5,7 +5,7 @@ export default ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('MainTab');
-    }, 3000);
+    }, 1000);
   });
 
   return (

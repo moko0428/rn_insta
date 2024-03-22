@@ -8,14 +8,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
+import CommentModal from '../components/CommentModal';
 
 const logo = require('../assets/icons/home/logo.png');
-const likeIcon = require('../assets/icons/home/likeIcon.png');
+export const likeIcon = require('../assets/icons/home/likeIcon.png');
 const commentIcon = require('../assets/icons/home/commentIcon.png');
-const moreIcon = require('../assets/icons/home/more.png');
+export const moreIcon = require('../assets/icons/home/more.png');
 
-const {width} = Dimensions.get('window');
+export const {width} = Dimensions.get('window');
 
 const dummy_story = [
   {
@@ -137,6 +138,8 @@ const dummy_feed = [
   },
 ];
 export default () => {
+  const [isVisible, setVisible] = useState(false);
+
   const renderStory = ({item, index}) => {
     return (
       <TouchableOpacity
@@ -208,7 +211,7 @@ export default () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingHorizontal: 16,
-            marginBottom: 32,
+            marginBottom: 4,
           }}>
           <View
             style={{
@@ -219,17 +222,32 @@ export default () => {
             <TouchableOpacity>
               <Image source={likeIcon} style={{width: 32, height: 32}} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setVisible(!isVisible)}>
               <Image source={commentIcon} style={{width: 32, height: 32}} />
             </TouchableOpacity>
           </View>
-          <Text>외 {item.like}명이 좋아합니다.</Text>
+          <View style={{alignItems: 'center'}}>
+            <Text>
+              {item.feedImg.lenght > 1 ? (
+                <Image source={moreIcon} style={{width: 32, height: 32}} />
+              ) : (
+                ''
+              )}
+            </Text>
+          </View>
+          <View>
+            <Image source={moreIcon} style={{width: 32, height: 32}} />
+          </View>
         </View>
-        <View style={{marginHorizontal: 16, gap: 4}}>
-          <Text>{item.name}</Text>
-          <Text style={{fontWeight: '400', color: '#4f4f4f'}}>
-            {item.contents}
-          </Text>
+        <View style={{marginHorizontal: 16, gap: 6}}>
+          <Text>외 {item.like}명이 좋아합니다.</Text>
+          <View style={{flexDirection: 'row', alignItems: 'center', gap: 4}}>
+            <Text>{item.name}</Text>
+            <Text style={{fontWeight: '400', color: '#4f4f4f'}}>
+              {item.contents}
+            </Text>
+          </View>
+          <Text style={{fontSize: 11, color: '#adadad'}}>2월 25일</Text>
         </View>
       </View>
     );
@@ -281,6 +299,7 @@ export default () => {
             </View>
           )}
         />
+        <CommentModal isVisible={isVisible} setVisible={setVisible} />
       </View>
     </SafeAreaView>
   );
