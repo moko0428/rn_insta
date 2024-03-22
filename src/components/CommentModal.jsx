@@ -11,11 +11,9 @@ import {
   TextInput,
   Keyboard,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import Modal from 'react-native-modal';
-import {likeIcon, moreIcon, width} from '../pages/Home';
-
-const addButton = require('../assets/icons/bottomtab/add_circle.png');
+import {likeIcon, moreIcon} from '../pages/Home';
+import {addButton} from '../icons';
 
 const dummy_comments = [
   {

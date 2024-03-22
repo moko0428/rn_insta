@@ -1,21 +1,16 @@
 import React, {useRef} from 'react';
+import {StyleSheet, TouchableOpacity, View, Animated} from 'react-native';
 import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  Animated,
-} from 'react-native';
-
-const homeOff = require('../assets/icons/bottomtab/home_on.png');
-const homeOn = require('../assets/icons/bottomtab/home_off.png');
-const playOff = require('../assets/icons/bottomtab/auto_read_play_on.png');
-const playOn = require('../assets/icons/bottomtab/auto_read_play_off.png');
-const personOff = require('../assets/icons/bottomtab/person_on.png');
-const personOn = require('../assets/icons/bottomtab/person_off.png');
-const searchOff = require('../assets/icons/bottomtab/search_on.png');
-const searchOn = require('../assets/icons/bottomtab/search_off.png');
-const addCirle = require('../assets/icons/bottomtab/add_circle.png');
+  addCirle,
+  homeOff,
+  homeOn,
+  personOff,
+  personOn,
+  playOff,
+  playOn,
+  searchOff,
+  searchOn,
+} from '../icons';
 
 const CustomBottomTab = ({state, navigation, insets, descriptors}) => {
   const tab1Value = useRef(new Animated.Value(0)).current;

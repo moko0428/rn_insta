@@ -3,18 +3,13 @@ import {
   FlatList,
   Image,
   SafeAreaView,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React, {useState} from 'react';
 import CommentModal from '../components/CommentModal';
-
-const logo = require('../assets/icons/home/logo.png');
-export const likeIcon = require('../assets/icons/home/likeIcon.png');
-const commentIcon = require('../assets/icons/home/commentIcon.png');
-export const moreIcon = require('../assets/icons/home/more.png');
+import {commentIcon, likeIcon, logo, moreIcon} from '../icons';
 
 export const {width} = Dimensions.get('window');
 
