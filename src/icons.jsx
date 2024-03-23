@@ -13,3 +13,7 @@ export const personOn = require('./assets/icons/bottomtab/person_off.png');
 export const searchOff = require('./assets/icons/bottomtab/search_on.png');
 export const searchOn = require('./assets/icons/bottomtab/search_off.png');
 export const addCirle = require('./assets/icons/bottomtab/add_circle.png');
+
+export const smallVideo = require('./assets/icons/smallvideo.png');
+export const smallmulti = require('./assets/icons/smallmulti.png');
+export const cancelIcon = require('./assets/icons/cancel.png');
