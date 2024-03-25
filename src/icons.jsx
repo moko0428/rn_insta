@@ -17,3 +17,4 @@ export const addCirle = require('./assets/icons/bottomtab/add_circle.png');
 export const smallVideo = require('./assets/icons/smallvideo.png');
 export const smallmulti = require('./assets/icons/smallmulti.png');
 export const cancelIcon = require('./assets/icons/cancel.png');
+export const settingIcon = require('./assets/icons/settingsIcon.png');

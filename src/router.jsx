@@ -8,6 +8,7 @@ import Search from './pages/Search';
 import Add from './pages/Add';
 import Play from './pages/Play';
 import MyPage from './pages/MyPage';
+import Follower from './pages/Follower';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,6 +36,7 @@ export default () => {
       }}>
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="MainTab" component={MainTab} />
+      <Stack.Screen name="Follower" component={Follower} />
     </Stack.Navigator>
   );
 };
