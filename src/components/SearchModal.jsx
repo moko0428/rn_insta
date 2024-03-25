@@ -97,6 +97,14 @@ export default ({isVisible, setVisible}) => {
       animationInTiming={300}
       backdropColor="#000"
       backdropOpacity={0.4}
+      onBackdropPress={() => {
+        Keyboard.dismiss();
+        setVisible(!isVisible);
+      }}
+      onBackButtonPress={() => {
+        Keyboard.dismiss();
+        setVisible(!isVisible);
+      }}
       style={{
         justifyContent: 'flex-start',
         marginTop: 60,
@@ -128,14 +136,6 @@ export default ({isVisible, setVisible}) => {
               paddingVertical: 12,
               paddingRight: 12,
               borderRadius: 4,
-            }}
-            onBackdropPress={() => {
-              Keyboard.dismiss();
-              setVisible(!isVisible);
-            }}
-            onBackButtonPress={() => {
-              Keyboard.dismiss();
-              setVisible(!isVisible);
             }}>
             <Text style={{fontSize: 16, fontWeight: '400', color: '#828282'}}>
               취소
